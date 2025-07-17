@@ -1,0 +1,144 @@
+@use "/src/sass/base/variables.scss" as *;
+.touch , .about {
+    padding-top: 60px;
+    .just-validate-error-field {
+        border:none;
+        outline: 1px solid $ui-error;
+    }
+    .just-validate-error-label {
+        padding:3px;
+    }
+    &__wrapper {
+        margin-top: 60px;
+    }
+    &__img {
+        display:none;
+    }
+    &__fieldset {
+       border:none;
+       margin: 0;
+       padding: 0;
+    }
+    &__label {
+        display: block;
+        color:$black;
+        font-size: 14px;
+        font-weight: 400;
+        line-height:28px;
+        &:nth-child(2) {
+            margin-top: 8px;
+        }
+    }
+    &__input {
+        width:100%;
+        height:48px;
+        border-radius:2px;
+        border: 1px solid #e2e1e5;
+        background: #fff;
+        padding:10px 15px;
+        color:$black;
+        :focus {
+            outline: 1px solid $black;
+            border: none;   
+        }
+        &::placeholder {
+            color:$ui-disabled;
+            font-size: 14px;
+        }
+    } 
+    &__textarea {
+        width: 100%;
+        height: 132px;
+        padding: 10px 15px;
+        border-radius: 2px;
+        border: 1px solid #e2e1e5;
+        background: #fff;
+        color:$black;
+        resize:none;
+        tab-size: 0;
+        :focus {
+            outline: 1px solid $black;
+            border: none;
+        }
+        &::placeholder {
+            color: $ui-disabled;
+            font-size: 14px;
+        }
+    }
+    &__check-block {
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 20px 0;
+        a {
+            color:#a22dc6;
+            text-decoration: none;
+            margin-left: 2px;
+        }
+    }
+    &__checkbox {
+        margin-right: 15px;
+    }
+    &__checkbox.just-validate-error-field {
+        border:none;
+        outline: none;
+    }
+    &__btn {
+        margin-top: 20px;
+    }
+    &__vase-img {
+        display:none;
+    }
+}
+@media screen and (min-width: 768px) {
+    .touch {
+        &__wrapper {
+            position: relative;
+            margin: 60px 7.5px 0 31.5px;
+        }
+        &__form {
+            width:300px;
+        }
+        &__vase-img {
+            display: block;   
+            position:absolute;
+            bottom:0;
+            right:0;
+        }
+    }
+}
+@media screen and (min-width:1200px) {
+    .touch {
+        &__img {
+            display: block;
+            width: 530px;
+            height:342px;
+            object-fit:cover;
+            box-shadow:5px 5px 10px 0 rgba(0,0,0, 0.25);
+        }
+        &__wrapper {
+            margin: 80px 0 0 0;
+        }
+        
+    }
+}
+@media screen and (min-width: 1920px) {
+    .touch {
+        &__fieldset {
+            display:flex;
+            justify-content: space-between;
+        }
+        &__input-block {
+            width:47%;
+        }
+        &__form {
+            width: auto;  
+        }
+        &__textarea {
+            width:47%;
+        }
+        &__wrapper {
+            justify-content: space-between;
+        }
+    }
+}
