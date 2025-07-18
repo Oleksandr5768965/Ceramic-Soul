@@ -6,7 +6,55 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import "/src/sass/style.scss";
+         // TABS SETTING
+try {
+    const tabsButtons = document.querySelectorAll(".catalog__tab"),
+    tabsTea = document.querySelector(".catalog__content-tea"),
+    tabsKitchen = document.querySelector(".catalog__content-kitchen"),
+    tabsPlants = document.querySelector(".catalog__content-plants"),
+    activeTabStyle = document.querySelector(".catalog__tab_active");
 
+    tabsButtons.forEach((btns, i , allEl) => {
+        btns.addEventListener("click", () => {
+          if (btns.classList.contains("tea")) {
+            tabsTea.classList.remove("hidden");
+            tabsKitchen.classList.add("hidden");
+            tabsPlants.classList.add("hidden");
+
+            btns.classList.add("catalog__tab_active");
+            allEl[1].classList.remove("catalog__tab_active");
+            allEl[2].classList.remove("catalog__tab_active");
+          }
+          else if (btns.classList.contains("kitchen")) {
+            tabsKitchen.classList.remove("hidden");
+            tabsTea.classList.add("hidden");
+            tabsPlants.classList.add("hidden");
+
+            btns.classList.add("catalog__tab_active");
+            allEl[0].classList.remove("catalog__tab_active");
+            allEl[2].classList.remove("catalog__tab_active");
+          }
+          else if (btns.classList.contains("plants")) {
+            tabsPlants.classList.remove("hidden");
+            tabsKitchen.classList.add("hidden");
+            tabsTea.classList.add("hidden");
+
+            btns.classList.add("catalog__tab_active");
+            allEl[0].classList.remove("catalog__tab_active");
+            allEl[1].classList.remove("catalog__tab_active");
+          }
+          else {
+            tabsPlants.classList.add("hidden");
+            tabsKitchen.classList.add("hidden");
+
+            allEll[0].classList.add("catalog__tab_active");
+          }
+      });
+    });
+} catch (error) {
+  console.log("Error on the Tabs setting block", error);
+}
+              // BURGER BUTTON MENU 
 try {
   const burger = document.querySelector(".burger"),
 	close = document.querySelector(".header__menu-close"),
@@ -21,8 +69,10 @@ close.addEventListener("click", () => {
 	menu.classList.remove("header__menu_active");
 	document.body.style.overflow = "";
 });
-} catch (e) {}
-
+} catch (error) {
+  console.log("Error on the Burger Button Menu setting block", error);
+}
+                // SLIDER SETTING 
 try {
   const swiper = new Swiper('.swiper', {
     slidesPerView:1,
@@ -47,8 +97,10 @@ try {
   },
   modules: [Navigation, Pagination],
 });
-} catch (e) {}
-
+} catch (error) {
+  console.log("Error on the Slider setting block", error);
+}
+                  // FORM VALIDATION SETTINGS 
 try {
   const validator = new JustValidate('.touch__form');
   
@@ -108,7 +160,10 @@ try {
 				});
 		});
 }
-catch (e) {}
+catch (error) {
+  console.log("Error on the Form Validation setting block", error);
+}
+                // FOOTER VALIDATION
 try {
   const footerValidator = new JustValidate(".footer__form");
 
@@ -135,4 +190,6 @@ try {
         .querySelector(".footer__check-block")
         .parentElement.querySelector(".checkbox-footer-error-message")
       });
-} catch (e) {}
+} catch (error) {
+  console.log("Error on the Footer Form Validation setting block", error);
+}
